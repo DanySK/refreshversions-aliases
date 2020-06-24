@@ -1,0 +1,87 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
+plugins {
+    kotlin("jvm")
+    `java-library`
+    `maven-publish`
+    `signing`
+    id("org.danilopianini.git-sensitive-semantic-versioning")
+    id("org.danilopianini.publish-on-central")
+    id("io.gitlab.arturbosch.detekt")
+    id("org.jlleitschuh.gradle.ktlint")
+}
+
+gitSemVer {
+    version = computeGitSemVer()
+}
+
+group = "org.danilopianini"
+val projectId = "$group.$name"
+val fullName = "Gradle Latex Plugin"
+val websiteUrl = "https://github.com/DanySK/gradle-latex"
+val projectDetails = "A plugin for compiling LaTeX, inspired by https://github.com/csabasulyok/gradle-latex"
+val pluginImplementationClass = "org.danilopianini.gradle.latex.Latex"
+
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://dl.bintray.com/kotlin/kotlinx.html/")
+        content {
+            includeGroup("org.jetbrains.kotlinx")
+        }
+    }
+}
+
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:_")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:_")
+}
+
+publishOnCentral {
+    projectDescription.set(projectDetails)
+    projectLongName.set(fullName)
+}
+
+tasks.withType<Test> {
+    testLogging {
+        events("passed", "skipped", "failed", "standardError")
+        exceptionFormat = TestExceptionFormat.FULL
+    }
+    useJUnitPlatform()
+}
+
+detekt {
+    failFast = true
+    buildUponDefaultConfig = true
+    config = files("$projectDir/config/detekt.yml")
+    reports {
+        html.enabled = true // observe findings in your browser with structure and code snippets
+        xml.enabled = true // checkstyle like format mainly for integrations like Jenkins
+        txt.enabled = true // similar to the console output, contains issue signature to manually edit baseline files
+    }
+}
+
+publishing {
+    publications {
+        withType<MavenPublication> {
+            pom {
+                developers {
+                    developer {
+                        name.set("Danilo Pianini")
+                        email.set("danilo.pianini@gmail.com")
+                        url.set("http://www.danilopianini.org/")
+                    }
+                }
+            }
+        }
+    }
+}
+
+if (System.getenv("CI") == true.toString()) {
+    signing {
+        val signingKey: String? by project
+        val signingPassword: String? by project
+        useInMemoryPgpKeys(signingKey, signingPassword)
+    }
+}
