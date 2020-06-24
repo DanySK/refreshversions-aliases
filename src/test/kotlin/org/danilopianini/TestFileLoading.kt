@@ -4,6 +4,8 @@ import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.ints.shouldBeGreaterThan
 import io.kotest.matchers.shouldNotBe
+import org.danilopianini.VersionAliases.additionalAliases
+import org.danilopianini.VersionAliases.justAdditionalAliases
 
 class TestFileLoading : StringSpec({
     "version aliases should not be empty" {

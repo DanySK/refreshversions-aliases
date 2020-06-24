@@ -1,23 +1,26 @@
-com.graphhopper:*
-    ^^^^^^^^^^^
-
-com.github.cb372:scalacache-*
+com.github.cb372:scalacache(-*)
                  ^^^^^^^^^^
 
-io.github.javaeden.orchid:*
+com.graphhopper:graphhopper(-*)
+    ^^^^^^^^^^^
+
+io.github.javaeden.orchid:Orchid*
                    ^^^^^^
 
-io.kotest:*
+io.kotest:kotest(-*)
    ^^^^^^
+
+it.unibo.alchemist:alchemist(-*)
+^^^^^^^^^^^^^^^^^^
 
 org.antlr:antlr4(-*)
           ^^^^^^
 
-org.apache.ignite:*
-           ^^^^^^
+org.apache.ignite:ignite(-*)
+    ^^^^^^^^^^^^^
 
-org.junit.jupiter:junit-*
-    ^^^^^
+org.junit.jupiter:junit-jupiter(-*)
+                  ^^^^^^^^^^^^^
 
-org.protelis:*
+org.protelis:protelis(-*)
     ^^^^^^^^

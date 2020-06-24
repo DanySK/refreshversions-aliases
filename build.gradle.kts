@@ -32,23 +32,44 @@ repositories {
     }
 }
 
+val jarTask = tasks.named("jar", Jar::class)
+val writeJarOutputPath by tasks.registering {
+    dependsOn(jarTask)
+    val outputFolder = file("$buildDir/jarpath")
+    val destination = file("$outputFolder/jarpath")
+    outputs.dir(outputFolder)
+    doLast {
+        destination.writeText(jarTask.get().outputs.files.singleFile.absolutePath)
+    }
+}
+
+tasks {
+    withType<Test> {
+        testLogging {
+            useJUnitPlatform()
+            events("passed", "skipped", "failed", "standardError")
+            exceptionFormat = TestExceptionFormat.FULL
+            showStandardStreams = true
+            showCauses = true
+            showStackTraces = true
+            events(*org.gradle.api.tasks.testing.logging.TestLogEvent.values())
+        }
+        dependsOn(writeJarOutputPath)
+    }
+}
+
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("io.kotest:kotest-runner-junit5-jvm:_")
     testImplementation("io.kotest:kotest-assertions-core-jvm:_")
+    testImplementation("io.github.classgraph:classgraph:_")
+    testImplementation(gradleTestKit())
+    testRuntimeOnly(files(writeJarOutputPath))
 }
 
 publishOnCentral {
     projectDescription.set(projectDetails)
     projectLongName.set(fullName)
-}
-
-tasks.withType<Test> {
-    testLogging {
-        events("passed", "skipped", "failed", "standardError")
-        exceptionFormat = TestExceptionFormat.FULL
-    }
-    useJUnitPlatform()
 }
 
 detekt {
