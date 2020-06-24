@@ -5,8 +5,31 @@ The goal of this project is to provide an automatic configuration of the great
 
 ## Use
 
-TBD
+If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
+aliases, just use this in your `settings.gradle.kts`:
+```kotlin
+import de.fayard.dependencies.bootstrapRefreshVersionsAndDependencies
+import org.danilopianini.VersionAliases.justAdditionalAliases
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("de.fayard:dependencies:+")
+        classpath("org.danilopianini:refreshversions-aliases:+")
+    }
+}
+bootstrapRefreshVersionsAndDependencies(justAdditionalAliases)
+```
 
+If you need further customization, change the last line:
+```kotlin
+bootstrapRefreshVersionsAndDependencies(listOf(
+    org.danilopianini.VersionAliases.additionalAliases,
+    file("your-custom-aliases.txt").readText()
+))
+```
 ## Problem description
 
 By default, it controls versions in a `version.properties` files, with entries in the form:
