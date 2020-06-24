@@ -32,4 +32,9 @@ version.it.unibo.alchemist=versionToUse
 
 ## Contributing to the project
 
-TBD
+Contributions via pull request are welcome.
+Each contribution must:
+* Provide evidence that the alias points to the correct / most common version of the library for which the inclusion has been required
+* Add at least two dependencies to the `src/test/resources/org/danilopianini/test/build.gradle.kts` file, thus
+demonstrating that reason exists to group the dependencies in a single entry
+
