@@ -36,6 +36,7 @@ class TestAliases : StringSpec({
             .size
         val versions = testFolder.root.listFiles()
             ?.find { it.name == "versions.properties" }
+            ?.also { print(it.readText()) }
             ?.readLines()
             ?.filter { it.startsWith("version.") }
             ?.size

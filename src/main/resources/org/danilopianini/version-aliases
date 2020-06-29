@@ -4,6 +4,9 @@ com.github.cb372:scalacache(-*)
 com.graphhopper:graphhopper(-*)
     ^^^^^^^^^^^
 
+com.uchuhimo:konf(-*)
+   ^         ^^^^
+
 io.github.javaeden.orchid:Orchid*
                    ^^^^^^
 

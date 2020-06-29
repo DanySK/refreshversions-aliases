@@ -13,6 +13,8 @@ dependencies {
     implementation("com.github.cb372:scalacache-guava_2.12:_")
     implementation("com.graphhopper:graphhopper-core:_")
     implementation("com.graphhopper:graphhopper-reader-osm:_")
+    implementation("com.uchuhimo:konf:_")
+    implementation("com.uchuhimo:konf-yaml:_")
     implementation("io.github.javaeden.orchid:OrchidCore:_")
     implementation("io.github.javaeden.orchid:OrchidWiki:_")
     implementation("io.kotest:kotest-runner-junit5-jvm:_")
