@@ -1,12 +1,15 @@
 import de.fayard.dependencies.bootstrapRefreshVersionsAndDependencies
-
+import org.danilopianini.VersionAliases.justAdditionalAliases
 buildscript {
-    repositories { gradlePluginPortal() }
-    dependencies.classpath("de.fayard:dependencies:+")
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("de.fayard:dependencies:0.+")
+        classpath("org.danilopianini:refreshversions-aliases:0.+")
+    }
 }
-
-bootstrapRefreshVersionsAndDependencies(listOf(
-//    file("config/version-alias-rules.txt").readText()
-))
+bootstrapRefreshVersionsAndDependencies(justAdditionalAliases)
 
 rootProject.name = "refreshversions-aliases"
