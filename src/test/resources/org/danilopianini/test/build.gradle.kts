@@ -11,6 +11,8 @@ repositories {
 dependencies {
     implementation("com.github.cb372:scalacache-core_2.12:_")
     implementation("com.github.cb372:scalacache-guava_2.12:_")
+    implementation("com.github.kittinunf.fuel:fuel-coroutines:_")
+    implementation("com.github.kittinunf.fuel:fuel:_")
     implementation("com.graphhopper:graphhopper-core:_")
     implementation("com.graphhopper:graphhopper-reader-osm:_")
     implementation("com.uchuhimo:konf:_")

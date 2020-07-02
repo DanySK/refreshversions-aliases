@@ -4,6 +4,9 @@ com.github.cb372:scalacache(-*)
 com.graphhopper:graphhopper(-*)
     ^^^^^^^^^^^
 
+com.github.kittinunf.fuel:fuel(-*)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 com.uchuhimo:konf(-*)
    ^         ^^^^
 
