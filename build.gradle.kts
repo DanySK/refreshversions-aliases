@@ -17,10 +17,8 @@ gitSemVer {
 
 group = "org.danilopianini"
 val projectId = "$group.$name"
-val fullName = "Gradle Latex Plugin"
-val websiteUrl = "https://github.com/DanySK/gradle-latex"
-val projectDetails = "A plugin for compiling LaTeX, inspired by https://github.com/csabasulyok/gradle-latex"
-val pluginImplementationClass = "org.danilopianini.gradle.latex.Latex"
+val fullName = "RefreshVersions aliases"
+val projectDetails = "A set of aliases for the refreshVersions Gradle Plugin"
 
 repositories {
     mavenCentral()
