@@ -31,4 +31,6 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-api:_")
     implementation("org.protelis:protelis-interpreter:_")
     implementation("org.protelis:protelis:_")
+    implementation("org.spekframework.spek2:spek-dsl-jvm:_")
+    implementation("org.spekframework.spek2:spek-runner-junit5:_")
 }

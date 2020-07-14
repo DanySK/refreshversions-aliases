@@ -30,3 +30,6 @@ org.junit.jupiter:junit-jupiter(-*)
 
 org.protelis:protelis(-*)
     ^^^^^^^^
+
+org.spekframework.spek2:spek(-*)
+    ^^^^^^^^^^^^^     ^
