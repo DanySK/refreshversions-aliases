@@ -24,6 +24,8 @@ org.antlr:antlr4(-*)
 
 org.apache.ignite:ignite(-*)
     ^^^^^^^^^^^^^
+org.jetbrains.dokka:*
+              ^^^^^
 
 org.junit.jupiter:junit-jupiter(-*)
                   ^^^^^^^^^^^^^

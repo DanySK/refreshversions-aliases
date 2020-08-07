@@ -6,6 +6,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -27,6 +28,8 @@ dependencies {
     implementation("org.antlr:antlr4-runtime:_")
     implementation("org.apache.ignite:ignite-spark:_")
     implementation("org.apache.ignite:ignite-tools:_")
+    implementation("org.jetbrains.dokka:dokka-core:_")
+    implementation("org.jetbrains.dokka:javadoc-plugin:_")
     implementation("org.junit.jupiter:junit-jupiter:_")
     implementation("org.junit.jupiter:junit-jupiter-api:_")
     implementation("org.protelis:protelis-interpreter:_")
