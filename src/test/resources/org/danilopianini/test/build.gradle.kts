@@ -1,5 +1,3 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
 plugins {
     `java-library`
 }
@@ -34,6 +32,8 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-api:_")
     implementation("org.protelis:protelis-interpreter:_")
     implementation("org.protelis:protelis:_")
+    implementation("org.scala-lang:scala-compiler:_")
+    implementation("org.scala-lang:scala-library:_")
     implementation("org.spekframework.spek2:spek-dsl-jvm:_")
     implementation("org.spekframework.spek2:spek-runner-junit5:_")
 }

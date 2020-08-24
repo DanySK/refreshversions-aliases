@@ -24,6 +24,7 @@ org.antlr:antlr4(-*)
 
 org.apache.ignite:ignite(-*)
     ^^^^^^^^^^^^^
+
 org.jetbrains.dokka:*
               ^^^^^
 
@@ -33,5 +34,9 @@ org.junit.jupiter:junit-jupiter(-*)
 org.protelis:protelis(-*)
     ^^^^^^^^
 
+org.scala-lang:scala(-*)
+    ^^^^^
+
 org.spekframework.spek2:spek(-*)
     ^^^^^^^^^^^^^     ^
+
