@@ -5,6 +5,37 @@ The goal of this project is to provide an automatic configuration of the great
 
 ## Use
 
+## refreshVersions 0.9.5+
+
+If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
+aliases, just use this in your `settings.gradle.kts`:
+```kotlin
+import de.fayard.refreshVersions.bootstrapRefreshVersions
+import org.danilopianini.VersionAliases.justAdditionalAliases
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("de.fayard.refreshVersions:refreshVersions:0.9.5")
+        classpath("org.danilopianini:refreshversions-aliases:+")
+    }
+}
+bootstrapRefreshVersions(justAdditionalAliases)
+```
+
+If you need further customization, change the last line:
+```kotlin
+bootstrapRefreshVersions(listOf(
+    org.danilopianini.VersionAliases.additionalAliases,
+    file("your-custom-aliases.txt").readText()
+))
+```
+
+
+## previous refreshVersions versions
+
 If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
 aliases, just use this in your `settings.gradle.kts`:
 ```kotlin
@@ -30,6 +61,7 @@ bootstrapRefreshVersionsAndDependencies(listOf(
     file("your-custom-aliases.txt").readText()
 ))
 ```
+
 ## Problem description
 
 By default, it controls versions in a `version.properties` files, with entries in the form:
