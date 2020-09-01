@@ -22,10 +22,11 @@ val projectDetails = "A set of aliases for the refreshVersions Gradle Plugin"
 
 repositories {
     mavenCentral()
-    maven {
-        url = uri("https://dl.bintray.com/kotlin/kotlinx.html/")
+    jcenter {
         content {
-            includeGroup("org.jetbrains.kotlinx")
+            onlyForConfigurations(
+                "detekt"
+            )
         }
     }
 }
