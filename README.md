@@ -18,7 +18,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("de.fayard.refreshVersions:refreshVersions:0.9.5")
+        classpath("de.fayard.refreshVersions:refreshVersions:0.9.6")
         classpath("org.danilopianini:refreshversions-aliases:+")
     }
 }
