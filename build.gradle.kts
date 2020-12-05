@@ -67,8 +67,8 @@ dependencies {
 }
 
 publishOnCentral {
-    projectDescription.set(projectDetails)
-    projectLongName.set(fullName)
+    projectDescription = projectDetails
+    projectLongName = fullName
 }
 
 detekt {
