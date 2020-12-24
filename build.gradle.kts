@@ -2,7 +2,6 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     kotlin("jvm")
-    `java-library`
     `maven-publish`
     `signing`
     id("org.danilopianini.git-sensitive-semantic-versioning")
@@ -66,9 +65,21 @@ dependencies {
     testRuntimeOnly(files(writeJarOutputPath))
 }
 
+repositories {
+    println(mavenCentral().url)
+}
+
 publishOnCentral {
     projectDescription = projectDetails
     projectLongName = fullName
+    val central = repositories.mavenCentral()
+    repository(
+        name = "CentralS01",
+        url = central.url.toString().replace("://", "://s01")
+    ) {
+        user = central.credentials.username
+        password = central.credentials.password
+    }
 }
 
 detekt {
