@@ -1,3 +1,4 @@
+import org.danilopianini.gradle.mavencentral.mavenCentral
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
@@ -68,13 +69,13 @@ dependencies {
 publishOnCentral {
     projectDescription = projectDetails
     projectLongName = fullName
-    val central = repositories.mavenCentral()
+    val central = project.mavenCentral()
     repository(
         name = "CentralS01",
         url = central.url.toString().replace("://", "://s01.")
     ) {
-        user = central.credentials.username
-        password = central.credentials.password
+        user = central.user()
+        password = central.password()
     }
 }
 
