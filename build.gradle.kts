@@ -65,17 +65,13 @@ dependencies {
     testRuntimeOnly(files(writeJarOutputPath))
 }
 
-repositories {
-    println(mavenCentral().url)
-}
-
 publishOnCentral {
     projectDescription = projectDetails
     projectLongName = fullName
     val central = repositories.mavenCentral()
     repository(
         name = "CentralS01",
-        url = central.url.toString().replace("://", "://s01")
+        url = central.url.toString().replace("://", "://s01.")
     ) {
         user = central.credentials.username
         password = central.credentials.password
@@ -115,4 +111,8 @@ if (System.getenv("CI") == true.toString()) {
         val signingPassword: String? by project
         useInMemoryPgpKeys(signingKey, signingPassword)
     }
+}
+
+tasks.register("deploy") {
+    dependsOn(tasks.findByName("publishKotlinMavenPublicationToCentralS01Repository"))
 }
