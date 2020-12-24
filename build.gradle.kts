@@ -74,7 +74,7 @@ publishOnCentral {
 detekt {
     failFast = true
     buildUponDefaultConfig = true
-    config = files("$projectDir/config/detekt.yml")
+    config = files("$projectDir/config/detekt/detekt.yml")
     reports {
         html.enabled = true // observe findings in your browser with structure and code snippets
         xml.enabled = true // checkstyle like format mainly for integrations like Jenkins
