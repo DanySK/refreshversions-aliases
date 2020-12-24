@@ -115,5 +115,7 @@ if (System.getenv("CI") == true.toString()) {
 }
 
 tasks.register("deploy") {
+    group = "deployment"
+    description = "Performs deployment towards default targets"
     dependsOn(tasks.findByName("publishKotlinMavenPublicationToCentralS01Repository"))
 }
