@@ -1,4 +1,3 @@
-import de.fayard.refreshVersions.bootstrapRefreshVersions
 import org.danilopianini.VersionAliases.justAdditionalAliases
 buildscript {
     repositories {
@@ -6,10 +5,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("de.fayard.refreshVersions:refreshVersions:0.9.5")
         classpath("org.danilopianini:refreshversions-aliases:+")
     }
 }
-bootstrapRefreshVersions(justAdditionalAliases)
+
+plugins {
+    id("de.fayard.refreshVersions") version "0.10.0"
+}
+
+refreshVersions {
+    extraArtifactVersionKeyRules = justAdditionalAliases
+}
 
 rootProject.name = "refreshversions-aliases"
