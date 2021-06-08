@@ -70,13 +70,6 @@ publishOnCentral {
     projectDescription = projectDetails
     projectLongName = fullName
     val central = project.mavenCentral()
-    repository(
-        name = "CentralS01",
-        url = central.url.toString().replace("://", "://s01.")
-    ) {
-        user = central.user()
-        password = central.password()
-    }
 }
 
 detekt {
