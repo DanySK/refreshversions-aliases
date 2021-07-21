@@ -11,10 +11,6 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint")
 }
 
-gitSemVer {
-    version = computeGitSemVer()
-}
-
 group = "org.danilopianini"
 val projectId = "$group.$name"
 val fullName = "RefreshVersions aliases"
