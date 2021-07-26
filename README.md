@@ -10,7 +10,9 @@ The goal of this project is to provide an automatic configuration of the great
 If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
 aliases, just use this in your `settings.gradle.kts`:
 
-```
+```kotlin
+import org.danilopianini.VersionAliases.justAdditionalAliases
+
 plugins {
     id("de.fayard.refreshVersions") version "0.10.1"
 }
