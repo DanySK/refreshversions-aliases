@@ -7,8 +7,7 @@ plugins {
     `signing`
     id("org.danilopianini.git-sensitive-semantic-versioning")
     id("org.danilopianini.publish-on-central")
-    id("io.gitlab.arturbosch.detekt")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("kotlin-qa")
 }
 
 group = "org.danilopianini"
