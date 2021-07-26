@@ -64,7 +64,6 @@ dependencies {
 publishOnCentral {
     projectDescription = projectDetails
     projectLongName = fullName
-    val central = project.mavenCentral()
 }
 
 detekt {
