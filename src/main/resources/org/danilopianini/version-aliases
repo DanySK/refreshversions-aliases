@@ -13,6 +13,9 @@ com.uchuhimo:konf(-*)
 io.github.javaeden.orchid:Orchid*
                    ^^^^^^
 
+io.gitlab.arturbosch.detekt..detekt(-*)
+                     ^^^^^^
+
 io.kotest:kotest(-*)
    ^^^^^^
 
