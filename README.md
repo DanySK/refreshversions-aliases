@@ -5,6 +5,31 @@ The goal of this project is to provide an automatic configuration of the great
 
 ## Use
 
+## refreshVersions 0.10.1+
+
+If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
+aliases, just use this in your `settings.gradle.kts`:
+
+```
+plugins {
+    id("de.fayard.refreshVersions") version "0.10.1"
+}
+
+refreshVersions {
+    extraArtifactVersionKeyRules = justAdditionalAliases
+}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.danilopianini:refreshversions-aliases:+")
+    }
+}
+```
+
 ## refreshVersions 0.9.5+
 
 If you do not have other custom aliases, and just want to use the latest version of both refreshVersions and custom
