@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 CUSTOM_BUILD_SCRIPT=${CUSTOM_BUILD_SCRIPT:-.github/scripts/deploy}
 if [ -x $CUSTOM_BUILD_SCRIPT ]; then
     echo 'Detected custom deploy instructions'
@@ -8,10 +7,10 @@ elif [ -x 'gradlew' ]; then
     echo 'Detected gradle wrapper, checking for known tasks'
     if ./gradlew tasks | grep '^deploy\s'; then
         echo 'Detected deploy task'
-        ./gradlew deploy --parallel
+        ./gradlew deploy --parallel || exit 2
     elif ./gradlew tasks | grep '^publish\s'; then
         echo 'Detected publish task'
-        ./gradlew publish --parallel
+        ./gradlew publish --parallel || exit 3
     else
         echo 'No deploy task'
     fi
