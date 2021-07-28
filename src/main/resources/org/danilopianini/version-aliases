@@ -34,6 +34,9 @@ org.jetbrains.dokka:*
 org.junit.jupiter:junit-jupiter(-*)
                   ^^^^^^^^^^^^^
 
+org.mockito:mockito(-*)
+    ^^^^^^^
+
 org.protelis:protelis(-*)
     ^^^^^^^^
 
