@@ -28,6 +28,9 @@ org.antlr:antlr4(-*)
 org.apache.ignite:ignite(-*)
     ^^^^^^^^^^^^^
 
+org.eclipse.xtext:*
+            ^^^^^
+
 org.jetbrains.dokka:*
               ^^^^^
 
